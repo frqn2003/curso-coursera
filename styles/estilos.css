@@ -3,3 +3,11 @@
         background-color: red;
     }
 }
+
+.flex-content {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
