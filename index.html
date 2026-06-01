@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="author" content="Francisco Ezequiel Aguirre">
+    <meta name="description" content="nombre de la persona">
+    <meta name="robot" content="index, follow">
+    <!-- Sirve para decirle a los robots como analizar la página, index es analizar toda la página y follow que siga todos los enlaces. -->
+    <meta name="language" content="english">
+    <meta name="revised" content="Sunday, July 18th, 2010, 5:15 pm" /> <!-- Dice la última vez que se modifico. -->
+    <meta name="rating" content="safe for kids"> <!-- Sirve para decir la audiencia -->
+
+    <meta http-equiv="Content-language" content="es" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Diseñado para hacer páginas webs responsivas, bastante importante para responsive design y SEO. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="true" />
+
+    <!-- Existen meta etiquetas para ayudar en la experiencia de usuario, estas se definen de la siguiente manera, estas 4 son esenciales
+	Sirven exactamente para que otras plataformas obtengan una vista previa del sitio web -->
+    <meta property="og:title" content="Mi Sitio">
+    <meta property="og:type" content="website">
+    <!-- Informa el tipo de contenido para la red social. Puede ser: website, article, video, etc. -->
+    <meta property="og:description" content="Descripción de la página"> <!-- Descripción del contenido -->
+    <meta property="og:image" content="https://via.placeholder.com/1200x630">
+    <!-- Imagen que se mostrará en la red social -->
+    <meta property="og:url" content="https://example.com"> <!-- URL de la página -->
+    <meta property="og:locale" content="es_AR"> <!-- Idioma de la página -->
+    <meta property="og:site_name" content="Mi Sitio"> <!-- Nombre del sitio web -->
+
+    <title>Mi Sitio</title>
+
+    <link rel="stylesheet" href="styles/estilos.css">
+</head>
+
+<body>
+
+    <form method="post">
+        <input type="email" name="email" id="email">
+        <input type="text" name="nombre" id="nombre" required maxlength="50" minlength="10">
+        <input type="number" id="cantidad" name="cantidad" min="2" max="10">
+        <!-- Los campos required es para obligar al usuario a completar ese input en especifico, 
+maxlength y minlegth se refiere a los tamaños máximos y mínimos para los textos mientras que max y min es para los numeros.-->
+        <input type="file" id="álbum" name="álbum" multiple>
+        <!-- Para seleccionar varios archivos o mails usualmente -->
+        <input type="tel" id="teléfono" name="teléfono" pattern="^(?:0|\+?44)(?:\d\s?){9,10}$">
+        <!-- define un patron que debe usar el input, sirve mucho para telefonos y para contraseñas -->
+        <div>
+            <label for="fecha_ingreso">Fecha de ingreso</label>
+            <input type="date" id="fecha_ingreso" name="fecha_ingreso">
+        </div>
+        <div>
+            <label for="rango">Cantidad de personas</label>
+            <input type="range" id="rango" name="rango" min="0" max="10" value="4"
+                oninput="this.nextElementSibling.value = this.value">
+            <output for="rango">4</output>
+        </div>
+        <div>
+            <label for="localidad">Localidad</label>
+            <select name="localidad" id="localidad">
+                <option value="buenos-aires">Buenos Aires</option>
+                <option value="cordoba">Córdoba</option>
+                <option value="rosario">Rosario</option>
+            </select>
+            <input type="data" id="localidad" name="localidad" list="locations">
+            <datalist id="locations">
+                <option value="Buenos Aires">
+                <option value="Córdoba">
+                <option value="Rosario">
+            </datalist>
+        </div>
+        <div>
+            <textarea name="response" rows="10" cols="30" maxlength="200">
+            </textarea>
+            <fieldset> </fieldset>
+        </div>
+        <input type="reset" value="Resetear">
+    </form>
+    <section>
+        <video width="320" height="240" controls>
+            <source src="video.mp4" type="video/mp4"> <!-- El primer formato es el que se va a usar, el de prioridad -->
+            <source src="video.webm" type="video/webm">
+        </video>
+        <audio controls>
+            <source src="audio.mp3" type="audio/mpeg">
+            <source src="audio.ogg" type="audio/ogg">
+        </audio>
+    </section>
+
+    <section>
+        <h2>Esto es un canva</h2>
+        <canvas height="400" width="320" id="canvas">Tu navegador no soporta canvas</canvas>
+    </section>
+    <script src="animationcanva.js"></script>
+    <script src="scripts/scripts.js"></script>
+</body>
+
+</html>
