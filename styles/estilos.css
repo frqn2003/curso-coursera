@@ -10,4 +10,30 @@
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+    flex-grow: 1;/* cuanto crece dependiendo de los otros elementos flex */
+    flex-shrink: 1; /* cuanto decrece dependiendo de los otros elementos flex */
+    flex-basis: 0; /* ancho inicial de cada elemento flex */
+    flex-direction: row; /* direccion de los elementos flex */
 }
+
+.caja-container {
+    flex: 1 0 auto; /* 1 = grow, 0 = shrink, auto = basis */
+}
+
+.caja {
+    width: 100%;
+    height: 100px;
+    background-color: blue;
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.grid-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px; 
+}
+
