@@ -5,19 +5,24 @@
 }
 
 .flex-content {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    flex-grow: 1;/* cuanto crece dependiendo de los otros elementos flex */
-    flex-shrink: 1; /* cuanto decrece dependiendo de los otros elementos flex */
-    flex-basis: 0; /* ancho inicial de cada elemento flex */
-    flex-direction: row; /* direccion de los elementos flex */
+    flex-grow: 1;
+    /* cuanto crece dependiendo de los otros elementos flex */
+    flex-shrink: 1;
+    /* cuanto decrece dependiendo de los otros elementos flex */
+    flex-basis: 0;
+    /* ancho inicial de cada elemento flex */
+    flex-direction: row;
+    /* direccion de los elementos flex */
 }
 
 .caja-container {
-    flex: 1 0 auto; /* 1 = grow, 0 = shrink, auto = basis */
+    flex: 1 0 auto;
+    /* 1 = grow, 0 = shrink, auto = basis */
 }
 
 .caja {
@@ -34,6 +39,57 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    gap: 10px; 
+    gap: 10px;
 }
 
+.elemento>p:nth-child(even) {
+    background-color: red;
+    transform: rotate(10deg) skew(10deg);
+}
+
+/* ejemplo de animaciones */
+
+.minutos {
+    animation: cycle 6s infinite linear;
+}
+
+.horas {
+    animation: cycle 60s infinite linear;
+}
+
+@keyframes cycle {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* Matrices */
+.sample-class {
+     transform: matrix(1.0, 2.0, 3.0, 4.0, 5.0, 6.0);
+}
+
+/* rotate(), rotate3d(), rotateX(), rotate(), rotateZ(), 
+para donde rota */
+.sample-class {
+    transform: rotate3d(3,2,1, 100deg);
+}
+
+/* translate(), translate3d(), translateX(), translateY(), translateZ(), 
+a donde se translada */
+.sample-class {
+    transform: translate3d(10px, 20px, 30px);
+}
+
+/* scale(), scale3d(), scaleX(), scaleY(), scaleZ(), 
+como escala el componente */
+.sample-class {
+    transform: scale3d(2, 1, 0.3);
+}
+/* skew(), skewX(), skewY(), 
+como se inclina */
+.sample-class {
+    transform: skew(100deg);
+}
